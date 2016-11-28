@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+
+<html data-ng-app="minApp">
+
+<head>
+	<meta charset='utf-8'>
+	<title>Angular Demo</title>
+	<script src="lib/angular/angular.min.js" type="text/javascript"></script>
+	<script src="lib/angular/angular-local-storage.min.js" type="text/javascript"></script>
+	<script src="lib/app.js" type="text/javascript"></script>
+	<script src="lib/controllers.js" type="text/javascript"></script>
+</head>
+
+<body data-ng-controller="AppController">
+	   <form ng-submit="addText()">
+           Namn: <input type="text" ng-model="frmNamn">
+           Ort: <input type="text" ng-model="frmOrt">
+           <input type="submit" id="submit"/>
+      </form>
+    <ul>
+        <li data-ng-repeat="item in retur_data">
+            {{item.namn}}, {{item.ort}}
+        </li>
+    </ul>
+    <div><button ng-click="reset()">Nollställ</button></div>
+</body>
+
+</html>
